@@ -5,6 +5,8 @@ package edu.hm.cs.swa.prakt1;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("Pull");
+        System.out.println("Build that WALL!!!!");
+
     }
+
 }
