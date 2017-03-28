@@ -1,4 +1,4 @@
-package edu.hm.cs.swa.annotations;
+package edu.hm.cs.swa.renderer;
 
 import java.lang.annotation.*;
 
