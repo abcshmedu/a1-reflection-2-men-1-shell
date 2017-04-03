@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * Created by CaptainEinsicht on 28.03.2017.
- * Alle Rechte vorbehalten bei Missbrauch wird zurÃ¼ck Missbraucht
+ * Alle Rechte vorbehalten bei Missbrauch wird zurück Missbraucht
  */
 public class SomeClass {
 
