@@ -29,7 +29,7 @@ public class SomeClass {
 
 
     /**
-     * Constructor for SomeClass
+     * Constructor for SomeClass.
      *
      * @param foo some foo
      */
