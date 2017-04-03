@@ -6,26 +6,18 @@ import java.util.Date;
 
 /**
  * Created by CaptainEinsicht on 28.03.2017.
- * Alle Rechte vorbehalten bei Missbrauch wird zurück Missbraucht
+ * Alle Rechte vorbehalten bei Missbrauch wird zurï¿½ck Missbraucht
  */
 public class SomeClass {
-
-    private final int numberOne = 1;
-
-    private final int numberTwo = 2;
-
-    private final int numberThree = 3;
-
-    private final int dateNumber = 123456789;
 
     @RenderMe
     private int foo;
 
     @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
-    private int[] array = {numberOne, numberTwo, numberThree};
+    private int[] array = {1, 2, 2};
 
     @RenderMe
-    private Date date = new Date(dateNumber);
+    private Date date = new Date(123456789);
 
 
     /**

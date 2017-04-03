@@ -1,8 +1,8 @@
 package edu.hm.cs.swa.renderer;
 
-import java.lang.reflect.*;
-
 import edu.hm.cs.swa.prakt1.SomeClass;
+
+import java.lang.reflect.Field;
 
 /**
  *
@@ -10,6 +10,7 @@ import edu.hm.cs.swa.prakt1.SomeClass;
 public class Renderer {
 
     private Class toRender;
+
 
     /**
      * @param obj the object you want to render.
@@ -21,24 +22,44 @@ public class Renderer {
 
     /**
      * @return an Object representing String.
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public String render() throws Exception {
-    	int tests = 0, successes = 0, failures = 0;
-    	Class<?> cut = Class.forName(toRender.getName());
-    	Method[] methods = cut.getMethods();
-    	for (Method method : methods) {
-    		if (method.getAnnotation(org.junit.Test.class) != null) {
-    			tests++;
-    			Object ott = cut.getConstructor().newInstance();
-    			try {
-    				method.invoke(ott);
-    				successes++;
-    			} catch(InvocationTargetException e) {
-    				failures++;
-    			}
-    		}
-    	}
-        return "Total tests: " + tests + " Successes: " + successes + " Failures: " + failures;
+        String tmp = "Instance of " + toRender.getName() + "\n";
+        Field[] fields = toRender.getDeclaredFields();
+        for (Field a : fields) {
+            a.setAccessible(true);
+            
+            tmp += a.getName() + " (Type " + a.getType() + "): " + "\n";
+        }
+        return tmp;
+
+
+
+
+
+        /*int tests = 0, successes = 0, failures = 0;
+        Class<?> cut = Class.forName(toRender.getName());
+        Method[] methods = cut.getMethods();
+        for (Method method : methods) {
+            if (method.getAnnotation(org.junit.Test.class) != null) {
+                tests++;
+                Object ott = cut.getConstructor().newInstance();
+                try {
+                    method.invoke(ott);
+                    successes++;
+                } catch (InvocationTargetException e) {
+                    failures++;
+                }
+            }
+        }
+        return "Total tests: " + tests + " Successes: " + successes + " Failures: " + failures;*/
     }
+
+
+    public static void main(String[] args) throws Exception {
+        SomeClass someClass = new SomeClass(5);
+        System.out.println(new Renderer(someClass).render());
+    }
+
 }
