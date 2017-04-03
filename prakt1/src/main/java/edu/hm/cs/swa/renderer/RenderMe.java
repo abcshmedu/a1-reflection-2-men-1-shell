@@ -9,25 +9,9 @@ import java.lang.annotation.Target;
  * keine ahnung warum ich das kommentieren soll.
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(value = {ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER})
 
 public @interface RenderMe {
-	
-	int value();
 
-	String with();
-	
-	
-
-    /**
-     * die render Methode die das rendern ermöglicht.
-     */
-    void render();
-
-    /**
-     * die with Methode die das withen ermöglicht.
-     *
-     * @return
-     */
-    String with();
+    String with() default "";
 }
