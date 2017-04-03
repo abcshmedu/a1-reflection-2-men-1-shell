@@ -14,7 +14,7 @@ public class Renderer {
     /**
      * @param obj the object you want to render.
      */
-    Renderer(Object obj) {
+    public Renderer(Object obj) {
         toRender = obj.getClass();
     }
 
