@@ -10,6 +10,6 @@ public class Renderer {
 	
 	public String render() {
 		return "";
-	};
+	}
 
 }
