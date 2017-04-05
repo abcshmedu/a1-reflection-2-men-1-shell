@@ -13,7 +13,7 @@ public class SomeClass {
     @RenderMe
     private int foo;
 
-    @RenderMe(with = "edu.hm.renderer.ArrayRenderer")
+    @RenderMe(with = "edu.hm.cs.swa.renderer.ArrayRenderer")
     private int[] array = {1, 2, 2};
 
     @RenderMe
