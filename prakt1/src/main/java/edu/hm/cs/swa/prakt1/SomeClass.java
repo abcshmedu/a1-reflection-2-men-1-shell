@@ -14,7 +14,7 @@ public class SomeClass {
     private int foo;
 
     @RenderMe(with = "edu.hm.cs.swa.renderer.ArrayRenderer")
-    private int[] array = {1, 2, 2};
+    private int[] array = {1, 2, 3};
 
     @RenderMe
     private Date date = new Date(123456789);

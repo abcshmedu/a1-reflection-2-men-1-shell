@@ -31,8 +31,9 @@ public class Renderer {
         for (Field a : fields) {
             a.setAccessible(true);
             if (!a.getAnnotation(RenderMe.class).with().equals("")) {
-                Class anotherRenderer = Class.forName(a.getAnnotation(RenderMe.class).with());
-                Object ott = anotherRenderer.getConstructor().newInstance();
+            	tmp += a.getName() + " ";
+                Class<?> anotherRenderer = Class.forName(a.getAnnotation(RenderMe.class).with());
+                Object ott = anotherRenderer.getConstructor(Object.class).newInstance(a.get(toRender));
                 Method method = anotherRenderer.getMethod("render", null);
                 String s = (String) method.invoke(ott);
                 tmp += s;
