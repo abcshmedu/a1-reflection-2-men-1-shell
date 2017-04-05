@@ -20,13 +20,22 @@ public class Renderer {
         toRender = obj;
     }
 
-
     /**
      * @return an Object representing String.
      * @throws ClassNotFoundException
      */
     public String render() throws Exception {
         String tmp = "Instance of " + toRender.getClass().getName() + ":\n";
+        
+        Method[] methods = toRender.getClass().getDeclaredMethods();
+        for (Method meth : methods) {
+        	if (meth.getAnnotation(RenderMe.class) != null) {
+        		meth.setAccessible(true);
+        		
+        		tmp += meth.getName() + ": " + meth.invoke(toRender) + "\n";
+        	}
+        }
+
         Field[] fields = toRender.getClass().getDeclaredFields();
         for (Field a : fields) {
             a.setAccessible(true);
