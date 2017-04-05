@@ -40,7 +40,6 @@ public class Renderer {
             } else {
                 tmp += a.getName() + " (Type " + a.getType() + "): " + a.get(toRender) + "\n";
             }
-
         }
         return tmp;
 
@@ -64,13 +63,6 @@ public class Renderer {
             }
         }
         return "Total tests: " + tests + " Successes: " + successes + " Failures: " + failures;*/
-    }
-
-
-    public static void main(String[] args) throws Exception {
-        SomeClass someClass = new SomeClass(5);
-        System.out.println(new Renderer(someClass).render());
-
     }
 
 }

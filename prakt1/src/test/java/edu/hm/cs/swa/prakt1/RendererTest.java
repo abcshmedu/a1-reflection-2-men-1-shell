@@ -2,6 +2,7 @@ package edu.hm.cs.swa.prakt1;
 
 import static org.junit.Assert.*;
 import org.junit.*;
+
 import edu.hm.cs.swa.renderer.*;
 
 public class RendererTest {
