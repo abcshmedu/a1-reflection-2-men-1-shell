@@ -3,6 +3,7 @@ package edu.hm.cs.swa.renderer;
 import edu.hm.cs.swa.prakt1.SomeClass;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  *
@@ -29,8 +30,16 @@ public class Renderer {
         Field[] fields = toRender.getClass().getDeclaredFields();
         for (Field a : fields) {
             a.setAccessible(true);
-            
-            tmp += a.getName() + " (Type " + a.getType() + "): " + a.get(toRender) + "\n";
+            if (!a.getAnnotation(RenderMe.class).with().equals("")) {
+                Class anotherRenderer = Class.forName(a.getAnnotation(RenderMe.class).with());
+                Object ott = anotherRenderer.getConstructor().newInstance();
+                Method method = anotherRenderer.getMethod("render", null);
+                String s = (String) method.invoke(ott);
+                tmp += s;
+            } else {
+                tmp += a.getName() + " (Type " + a.getType() + "): " + a.get(toRender) + "\n";
+            }
+
         }
         return tmp;
 
@@ -60,6 +69,7 @@ public class Renderer {
     public static void main(String[] args) throws Exception {
         SomeClass someClass = new SomeClass(5);
         System.out.println(new Renderer(someClass).render());
+
     }
 
 }
