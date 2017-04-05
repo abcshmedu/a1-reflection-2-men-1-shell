@@ -9,14 +9,14 @@ import java.lang.reflect.Field;
  */
 public class Renderer {
 
-    private Class toRender;
+    private Object toRender;
 
 
     /**
      * @param obj the object you want to render.
      */
     public Renderer(Object obj) {
-        toRender = obj.getClass();
+        toRender = obj;
     }
 
 
@@ -25,12 +25,12 @@ public class Renderer {
      * @throws ClassNotFoundException
      */
     public String render() throws Exception {
-        String tmp = "Instance of " + toRender.getName() + "\n";
-        Field[] fields = toRender.getDeclaredFields();
+        String tmp = "Instance of " + toRender.getClass().getName() + ":\n";
+        Field[] fields = toRender.getClass().getDeclaredFields();
         for (Field a : fields) {
             a.setAccessible(true);
             
-            tmp += a.getName() + " (Type " + a.getType() + "): " + "\n";
+            tmp += a.getName() + " (Type " + a.getType() + "): " + a.get(toRender) + "\n";
         }
         return tmp;
 
