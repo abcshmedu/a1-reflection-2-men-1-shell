@@ -4,7 +4,6 @@ import edu.hm.cs.swa.prakt1.SomeClass;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
 /**
  *
  */
@@ -51,27 +50,5 @@ public class Renderer {
             }
         }
         return tmp;
-
-
-
-
-
-        /*int tests = 0, successes = 0, failures = 0;
-        Class<?> cut = Class.forName(toRender.getName());
-        Method[] methods = cut.getMethods();
-        for (Method method : methods) {
-            if (method.getAnnotation(org.junit.Test.class) != null) {
-                tests++;
-                Object ott = cut.getConstructor().newInstance();
-                try {
-                    method.invoke(ott);
-                    successes++;
-                } catch (InvocationTargetException e) {
-                    failures++;
-                }
-            }
-        }
-        return "Total tests: " + tests + " Successes: " + successes + " Failures: " + failures;*/
     }
-
 }
