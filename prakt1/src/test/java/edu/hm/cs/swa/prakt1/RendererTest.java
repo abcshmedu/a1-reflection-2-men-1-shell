@@ -33,20 +33,20 @@ public class RendererTest {
 	@Parameterized.Parameters
 	public static Collection<Object[]> params() {
 		return Arrays.asList(new Object[][] { {
-				"Instance of edu.hm.cs.swa.prakt1.SomeClass:\n"
+				"Instance of edu.hm.cs.swa.prakt1.SomeClass:\n" + "someMethod: 4\n" 
 						+ "foo (Type int): 0\narray (Type int[]) [1, 2, 3, ]\ndate (Type class java.util.Date): Fri Jan 02 11:17:36 CET 1970\n",
 				new SomeClass(0) },
 				{
-						"Instance of edu.hm.cs.swa.prakt1.SomeClass:\n"
+						"Instance of edu.hm.cs.swa.prakt1.SomeClass:\n" + "someMethod: 4\n"
 								+ "foo (Type int): 1\narray (Type int[]) [1, 2, 3, ]\ndate (Type class java.util.Date): Fri Jan 02 11:17:36 CET 1970\n",
 						new SomeClass(1) },
-				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n"
+				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n" + "someMethod: 4\n"
 						+ "foo (Type int): 2\narray (Type int[]) [1, 2, 3, ]\ndate (Type class java.util.Date): Fri Jan 02 11:17:36 CET 1970\n",
 						new SomeClass(2) },
-				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n"
+				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n" + "someMethod: 4\n"
 						+ "foo (Type int): 3\narray (Type int[]) [1, 2, 3, ]\ndate (Type class java.util.Date): Fri Jan 02 11:17:36 CET 1970\n",
 						new SomeClass(3) },
-				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n"
+				{ "Instance of edu.hm.cs.swa.prakt1.SomeClass:\n" + "someMethod: 4\n"
 						+ "foo (Type int): 4\narray (Type int[]) [1, 2, 3, ]\ndate (Type class java.util.Date): Fri Jan 02 11:17:36 CET 1970\n",
 						new SomeClass(4) } });
 	}
