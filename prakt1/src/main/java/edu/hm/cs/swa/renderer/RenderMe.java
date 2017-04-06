@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 public @interface RenderMe {
 
     /**
-     * @return
+     * @return String of a class location oder default value "".
      */
     String with() default "";
 }
