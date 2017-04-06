@@ -5,8 +5,7 @@ import edu.hm.cs.swa.renderer.RenderMe;
 import java.util.Date;
 
 /**
- * Created by CaptainEinsicht on 28.03.2017.
- * Alle Rechte vorbehalten bei Missbrauch wird zur�ck Missbraucht
+ * An exampleclass for testing the Renderer.
  */
 public class SomeClass {
 
